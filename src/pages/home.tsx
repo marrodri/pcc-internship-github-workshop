@@ -12,15 +12,25 @@ export default function Home() {
         <EventButton />
         <EventButton />
       </ScrollView>
-      
     </View>
   );
 }
 
 function EventButton() {
   return (
-    <View style={ComponentsStyle.eventButton}>
-      <Text>Hi this is an event button</Text>
+    <View style={EventButtonStyle.mainBody}>
+      <View>
+        <Text>Image</Text>
+      </View>
+      {/* quick view of event details. */}
+      <View>
+        <Text>Event Title</Text>
+        <Text>Organizers: First Organizer - Person's Name</Text>
+        <Text>Dates: Start Date - End Date</Text>
+        {/* last part, in small letters bottom of the button */}
+        <Text>Date of publishment(## days ago)</Text>
+      </View>
+      
     </View>
   );
 }
@@ -28,22 +38,28 @@ function EventButton() {
 const PagesStyles = StyleSheet.create({
   home: {
     backgroundColor: "#ff23f2",
-    alignItems:"center",
-    justifyContent:"center",
+    alignItems: "center",
+    justifyContent: "center",
     flex: 1,
-    flexDirection:"column",
+    flexDirection: "column",
   },
-  
 });
 
-const ComponentsStyle= StyleSheet.create({
-  eventButton: {
+const EventButtonStyle = StyleSheet.create({
+  mainBody: {
     backgroundColor: "#4287f5",
     padding: 10,
-    height:250,
-    width:350,
-    justifyContent:"center",
-    alignItems:"center",
-    marginVertical:10,
+    height: 250,
+    width: 350,
+    justifyContent: "center",
+    alignItems: "center",
+    flex: 1,
+    flexDirection: "column",
+    marginVertical: 10,
   },
+  descriptionBody:{},
+  title:{},
+  organizers:{},
+  eventDates:{},
+  publishedDate:{},
 });
